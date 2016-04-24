@@ -228,12 +228,13 @@ angular.module('bayes2016App')
       $scope.state = geography.id;
       // console.log(geography);
 
-      $.getJSON("app/sample_data.json", function(json) {
+      $.getJSON("app/state_data.json", function(json) {
         console.log(json); // this will show the info it in firebug console
 
         $.each(json, function(i, v) {
           if (v.postal_cd == $scope.state) {
             $scope.communityColleges = v.num_com_college;
+            $scope.combinedCost = v.combined_costs_attrition;
             $scope.$apply();
             return false; // stops the loop
           }
