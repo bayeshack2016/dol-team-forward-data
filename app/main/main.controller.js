@@ -308,11 +308,11 @@ angular.module('bayes2016App')
     $scope.options1 = {
       chart: {
         type: 'discreteBarChart',
-        width: 200,
-        height: 150,
+        width: 450,
+        height: 200,
         margin: {
-          top: 20,
-          right: 20,
+          top: 10,
+          right: 0,
           bottom: 60,
           left: 55
         },
@@ -322,28 +322,19 @@ angular.module('bayes2016App')
         y: function(d) {
           return d.value;
         },
-        showValues: true,
+        showValues: false,
         valueFormat: function(d) {
           return d3.format(',.4f')(d);
-        },
-        transitionDuration: 500,
-        xAxis: {
-          axisLabel: 'X Axis'
-        },
-        yAxis: {
-          axisLabel: 'Y Axis',
-          axisLabelDistance: 30
         }
       }
     };
-
 
     // Graph 2
     $scope.options2 = {
       chart: {
         type: 'discreteBarChart',
         width: 1250,
-        height: 250,
+        height: 350,
         margin: {
           top: 20,
           right: 20,
