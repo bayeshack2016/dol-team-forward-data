@@ -269,6 +269,8 @@ angular.module('bayes2016App')
               }]
             }];
 
+            var proj = (v.tot_med_rate + 1) * v.tot_med_current;
+
             $scope.data2 = [{
               key: "Cumulative Return",
               values: [{
@@ -288,7 +290,7 @@ angular.module('bayes2016App')
                 "value": v.tot_med_current
               }, {
                 "label": "Projected Total Medium Skilled Jobs",
-                "value": v.tot_med_projected_2020
+                "value": proj
               }]
             }];
 
