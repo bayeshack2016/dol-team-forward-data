@@ -45,9 +45,10 @@
             <div class="slide-frame">
                 <div class="row">
                     <div class="title" data-swiper-parallax="-200">{{ stateName }}</div>
+                    <a style="position: absolute; top: 70px; right: 90px" class="btn btn-primary" ng-click="prev()" role="button">Up</a>
                 </div>
                 <div class="row" data-swiper-parallax="-600" style="border-color: dimgray; border-bottom: 2px solid; height: 30%;">
-                    <div class="col-sm-4" style="text-align: center; padding-top: 7%;">
+                    <div class="col-sm-2" style="text-align: center; padding-top: 7%;">
                         <nvd3 options="options1" data="data1"></nvd3>
                     </div>
                     <div class="col-sm-4" style="text-align: center; font-size: 78pt; padding-top: 5%;">
@@ -60,8 +61,6 @@
                 <div class="row" style="font-size: 38pt; text-align: center; padding-top: 10%; height: 50%;">
                     <nvd3 options="options2" data="data2"></nvd3>
                 </div>
-
-                <a class="btn btn-primary" ng-click="prev()" role="button">Up</a>
             </div>
         </ks-swiper-slide>
 

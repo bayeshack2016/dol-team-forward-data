@@ -248,7 +248,6 @@ angular.module('bayes2016App')
           if (v.postal_cd == $scope.state) {
             $scope.communityColleges = v.num_com_college;
             $scope.combinedCost = $scope.MoneyFormat(v.combined_costs_attrition);
-            console.log($scope.combinedCost);
 
             $scope.data1 = [{
               key: "Cumulative Return",
@@ -257,7 +256,7 @@ angular.module('bayes2016App')
                 "value": v.cc_spend_per_student
               }, {
                 "label": "2012 Total Medium Skilled Jobs",
-                "value": parseFloat(v.combined_costs_attrition.slice(1, v.combined_costs_attrition.length))
+                "value": v.combined_costs_attrition.length
               }]
             }];
 
@@ -337,13 +336,13 @@ angular.module('bayes2016App')
     $scope.options2 = {
       chart: {
         type: 'discreteBarChart',
-        width: 600,
-        height: 200,
+        width: 1250,
+        height: 250,
         margin: {
           top: 20,
           right: 20,
           bottom: 60,
-          left: 55
+          left: 80
         },
         x: function(d) {
           return d.label;
@@ -351,18 +350,11 @@ angular.module('bayes2016App')
         y: function(d) {
           return d.value;
         },
-        showValues: true,
+        showValues: false,
         valueFormat: function(d) {
           return d3.format(',.4f')(d);
         },
-        transitionDuration: 500,
-        xAxis: {
-          axisLabel: 'X Axis'
-        },
-        yAxis: {
-          axisLabel: 'Y Axis',
-          axisLabelDistance: 30
-        }
+        transitionDuration: 500
       }
     };
 
