@@ -255,6 +255,9 @@ angular.module('bayes2016App')
             $scope.communityColleges = v.num_com_college;
             $scope.combinedCost = $scope.MoneyFormat(v.combined_costs_attrition);
 
+            $scope.tot_work_prep_rate = Math.round(v.tot_work_prep_rate*100);
+            $scope.tot_med_rate = Math.round(v.tot_med_rate*100);
+
             $scope.data1 = [{
               key: "Community College Spent per Student",
               values: [{
@@ -309,7 +312,7 @@ angular.module('bayes2016App')
       chart: {
         type: 'discreteBarChart',
         width: 450,
-        height: 200,
+        height: 190,
         margin: {
           top: 10,
           right: 0,
