@@ -6,7 +6,7 @@
         slides-per-view="1"
         slides-per-column="1"
         space-between="0"
-        pagination-is-active="true"
+        pagination-is-active="false"
         pagination-clickable="false"
         show-nav-buttons="false"
         loop="false"
@@ -21,51 +21,17 @@
         <!-- SLIDE 1 -->
         <ks-swiper-slide class="swiper-slide">
           <div class="slide-frame">
-            <div class="title" data-swiper-parallax="-100">Intro</div>
-
-<div class="title" data-swiper-parallax="-100">Introduction</div>
-              <div class="text" data-swiper-parallax="-600">
-                <p>Workforce development is crucial towards preparing workers for the skills they need to compete in a modern economy.  By 2017, an estimated 40% of all new job growth in the United States will be driven by so-called “middle-skill” jobs (i.e…….).   In order for workers to have the requisite skill set needed to effectively compete in the modern economy, they will need to learn new skills and adapt to rapidly changing tides within the labor market.
-                  <br><br>
-                  Our analysis dimensions the gap between middle-skill labor supply and middle-skill jobs demanded by state.  Through predictive modeling, we then projected the impact of the gap on states in future years.  To address the current and future gaps, we then sought to identify key policy levers that can be used to address this gap (i.e. increase $/student, # of community colleges, # day cares, etc…)</p>
-              </div>
+            <div class="title" data-swiper-parallax="-100">Introduction</div>
+            <div class="text" data-swiper-parallax="-600">
+              <p>Workforce development is crucial towards preparing workers for the skills they need to compete in a modern economy.  By 2017, an estimated 40% of all new job growth in the United States will be driven by so-called “middle-skill” jobs (i.e…….).   In order for workers to have the requisite skill set needed to effectively compete in the modern economy, they will need to learn new skills and adapt to rapidly changing tides within the labor market.
+                <br><br>
+                Our analysis dimensions the gap between middle-skill labor supply and middle-skill jobs demanded by state.  Through predictive modeling, we then projected the impact of the gap on states in future years.  To address the current and future gaps, we then sought to identify key policy levers that can be used to address this gap (i.e. increase $/student, # of community colleges, # day cares, etc…)</p>
+            </div>
 
             <div class="subtitle" data-swiper-parallax="-300">Please select your state</div>
             <a class="btn btn-primary" ng-click="next()" role="button">Next</a>
             <div style="width: 100%; height: 100%; text-align: center;">
-              <div id="tooltip"></div><!-- div to hold tooltip. -->
-              <svg
-                  width="75%"
-                  height="75%"
-                  viewBox="0 0 960 600"
-                  id="statesvg" />
-              <script>
 
-                function tooltipHtml(n, d){ /* function to create html content string in tooltip div. */
-                  return "<h4>"+n+"</h4><table>"+
-                          "<tr><td>Low</td><td>"+(d.low)+"</td></tr>"+
-                          "<tr><td>Average</td><td>"+(d.avg)+"</td></tr>"+
-                          "<tr><td>High</td><td>"+(d.high)+"</td></tr>"+
-                          "</table>";
-                }
-
-                var sampleData ={}; /* Sample random data. */
-                ["HI", "AK", "FL", "SC", "GA", "AL", "NC", "TN", "RI", "CT", "MA",
-                  "ME", "NH", "VT", "NY", "NJ", "PA", "DE", "MD", "WV", "KY", "OH",
-                  "MI", "WY", "MT", "ID", "WA", "DC", "TX", "CA", "AZ", "NV", "UT",
-                  "CO", "NM", "OR", "ND", "SD", "NE", "IA", "MS", "IN", "IL", "MN",
-                  "WI", "MO", "AR", "OK", "KS", "LS", "VA"]
-                        .forEach(function(d){
-                          var low=Math.round(100*Math.random()),
-                                  mid=Math.round(100*Math.random()),
-                                  high=Math.round(100*Math.random());
-                          sampleData[d]={low:d3.min([low,mid,high]), high:d3.max([low,mid,high]),
-                            avg:Math.round((low+mid+high)/3), color:d3.interpolate("#ffffcc", "#800026")(low/100)};
-                        });
-
-                /* draw states on id #statesvg */
-                uStates.draw("#statesvg", sampleData, tooltipHtml);
-              </script>
             </div>
           </div>
         </ks-swiper-slide>
@@ -73,90 +39,25 @@
         <!-- SLIDE 2 -->
         <ks-swiper-slide class="swiper-slide">
           <div class="slide-frame">
-            <div class="title" data-swiper-parallax="-100">{{selectedState}}</div>
-            <div class="subtitle" data-swiper-parallax="-300">Detailed View</div>
-            <div class="chart-row" data-swiper-parallax="-600" style="height: 30%; width: 100%; border-color: dimgray; border-bottom: 2px solid;">
-              <p>Metrics row.</p>
-              <script src="http://d3js.org/d3.v3.min.js"></script>
-              <script>
-                var margin = {top: 80, right: 80, bottom: 80, left: 80},
-                        width = 600 - margin.left - margin.right,
-                        height = 400 - margin.top - margin.bottom;
-                var x = d3.scale.ordinal()
-                        .rangeRoundBands([0, width], .1);
-                var y0 = d3.scale.linear().domain([300, 1100]).range([height, 0]),
-                        y1 = d3.scale.linear().domain([20, 80]).range([height, 0]);
-                var xAxis = d3.svg.axis()
-                        .scale(x)
-                        .orient("bottom");
-                // create left yAxis
-                var yAxisLeft = d3.svg.axis().scale(y0).ticks(4).orient("left");
-                // create right yAxis
-                var yAxisRight = d3.svg.axis().scale(y1).ticks(6).orient("right");
-                var svg = d3.select("body").append("svg")
-                        .attr("width", width + margin.left + margin.right)
-                        .attr("height", height + margin.top + margin.bottom)
-                        .append("g")
-                        .attr("class", "graph")
-                        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-                d3.tsv("app/data.tsv", type, function(error, data) {
-                  x.domain(data.map(function(d) { return d.year; }));
-                  y0.domain([0, d3.max(data, function(d) { return d.money; })]);
-
-                  svg.append("g")
-                          .attr("class", "x axis")
-                          .attr("transform", "translate(0," + height + ")")
-                          .call(xAxis);
-                  svg.append("g")
-                          .attr("class", "y axis axisLeft")
-                          .attr("transform", "translate(0,0)")
-                          .call(yAxisLeft)
-                          .append("text")
-                          .attr("y", 6)
-                          .attr("dy", "-2em")
-                          .style("text-anchor", "end")
-                          .style("text-anchor", "end")
-                          .text("Dollars");
-
-                  svg.append("g")
-                          .attr("class", "y axis axisRight")
-                          .attr("transform", "translate(" + (width) + ",0)")
-                          .call(yAxisRight)
-                          .append("text")
-                          .attr("y", 6)
-                          .attr("dy", "-2em")
-                          .attr("dx", "2em")
-                          .style("text-anchor", "end")
-                          .text("#");
-                  bars = svg.selectAll(".bar").data(data).enter();
-                  bars.append("rect")
-                          .attr("class", "bar1")
-                          .attr("x", function(d) { return x(d.year); })
-                          .attr("width", x.rangeBand()/2)
-                          .attr("y", function(d) { return y0(d.money); })
-                          .attr("height", function(d,i,j) { return height - y0(d.money); });
-                  bars.append("rect")
-                          .attr("class", "bar2")
-                          .attr("x", function(d) { return x(d.year) + x.rangeBand()/2; })
-                          .attr("width", x.rangeBand() / 2)
-                          .attr("y", function(d) { return y1(d.number); })
-                          .attr("height", function(d,i,j) { return height - y1(d.number); });
-                });
-                function type(d) {
-                  d.money = +d.money;
-                  return d;
-                }
-              </script>
+            <div class="row">
+              <div class="col-sm-8">
+                <datamap map="mapObject" on-click="updateActiveGeography"></datamap>
+              </div>
+              <div class="col-sm-4">
+                <h3>STATE{{ state }}</h3>
+              </div>
             </div>
           </div>
         </ks-swiper-slide>
 
+        <!-- SLIDE 3 -->
         <ks-swiper-slide class="swiper-slide">
           <div class="title" data-swiper-parallax="-100">Slide 3</div>
           <div class="subtitle" data-swiper-parallax="-200">Subtitle</div>
           <div class="text" data-swiper-parallax="-300">
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam dictum mattis velit, sit amet faucibus felis iaculis nec. Nulla laoreet justo vitae porttitor porttitor. Suspendisse in sem justo. Integer laoreet magna nec elit suscipit, ac laoreet nibh euismod. Aliquam hendrerit lorem at elit facilisis rutrum. Ut at ullamcorper velit. Nulla ligula nisi, imperdiet ut lacinia nec, tincidunt ut libero. Aenean feugiat non eros quis feugiat.</p>
           </div>
+          <a class="btn btn-primary" ng-click="prev()" role="button">Previous</a>
         </ks-swiper-slide>
 
       </ks-swiper-container>
