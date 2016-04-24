@@ -63,9 +63,8 @@
                 .style("top", (d3.event.pageY - 28) + "px");
         }
 
-        function mouseClick(d) {
-            console.log('>>>>');
-            console.log(d);
+        function click(d) {
+            console.log(d.n);
         }
 
         function mouseOut(){
@@ -75,7 +74,7 @@
         d3.select(id).selectAll(".state")
             .data(uStatePaths).enter().append("path").attr("class","state").attr("d",function(d){ return d.d;})
             .style("fill",function(d){ return data[d.id].color; })
-            .on("mouseover", mouseOver).on("mouseout", mouseOut).on("mouseclick", mouseClick);
+            .on("mouseover", mouseOver).on("mouseout", mouseOut).on("click", click);
     }
     this.uStates=uStates;
 })();
