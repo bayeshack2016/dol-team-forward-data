@@ -10,11 +10,11 @@ angular.module('bayes2016App')
     $scope.swiper = {};
 
     $scope.next = function() {
-      $scope.swiper.slideNext();
+      $scope.swiper.slideNext(true, 1200);
     };
 
     $scope.prev = function() {
-      $scope.swiper.slidePrev();
+      $scope.swiper.slidePrev(true, 1200);
     };
 
     $scope.onReadySwiper = function(swiper) {
