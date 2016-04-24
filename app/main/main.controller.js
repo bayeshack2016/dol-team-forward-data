@@ -287,11 +287,11 @@ angular.module('bayes2016App')
       },
       title: {
         enable: true,
-        text: 'Title for Line Chart'
+        text: 'Title1'
       },
       subtitle: {
         enable: true,
-        text: 'Subtitle for simple line chart.',
+        text: 'Subtitle2',
         css: {
           'text-align': 'center',
           'margin': '10px 13px 0px 7px'
@@ -312,62 +312,6 @@ angular.module('bayes2016App')
 
     // Graph 2
     $scope.options2 = {
-      chart: {
-        type: 'discreteBarChart',
-        width: 200,
-        height: 150,
-        margin: {
-          top: 20,
-          right: 20,
-          bottom: 60,
-          left: 55
-        },
-        x: function(d) {
-          return d.label;
-        },
-        y: function(d) {
-          return d.value;
-        },
-        showValues: true,
-        valueFormat: function(d) {
-          return d3.format(',.4f')(d);
-        },
-        transitionDuration: 500,
-        xAxis: {
-          axisLabel: 'X Axis'
-        },
-        yAxis: {
-          axisLabel: 'Y Axis',
-          axisLabelDistance: 30
-        }
-      },
-      title: {
-        enable: true,
-        text: 'Title for Line Chart'
-      },
-      subtitle: {
-        enable: true,
-        text: 'Subtitle for simple line chart.',
-        css: {
-          'text-align': 'center',
-          'margin': '10px 13px 0px 7px'
-        }
-      }
-    };
-
-    $scope.data2 = [{
-      key: "Cumulative Return",
-      values: [{
-        "label": "2011 Total Medium Skilled Jobs",
-        "value": 2
-      }, {
-        "label": "2012 Total Medium Skilled Jobs",
-        "value": 4
-      }]
-    }];
-
-    // Graph 3
-    $scope.options3 = {
       chart: {
         type: 'discreteBarChart',
         width: 600,
@@ -399,11 +343,11 @@ angular.module('bayes2016App')
       },
       title: {
         enable: true,
-        text: 'Title for Line Chart'
+        text: 'Title2'
       },
       subtitle: {
         enable: true,
-        text: 'Subtitle for simple line chart.',
+        text: 'Subtitle2',
         css: {
           'text-align': 'center',
           'margin': '10px 13px 0px 7px'
@@ -411,7 +355,7 @@ angular.module('bayes2016App')
       }
     };
 
-    $scope.data3 = [{
+    $scope.data2 = [{
       key: "Cumulative Return",
       values: [{
         "label": "2011 Total Medium Skilled Jobs",
