@@ -231,8 +231,7 @@ angular.module('bayes2016App')
     $scope.MoneyFormat = function(number) {
       if (number != undefined) {
         var abs = number;
-        var absNum = abs.slice(1);
-        var numFinal = parseInt(absNum);
+        var numFinal = parseInt(abs);
       }
       return '$' + numFinal + 'm';
     };
