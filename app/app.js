@@ -5,8 +5,7 @@ angular.module('bayes2016App', [
   'ngResource',
   'ngSanitize',
   'ngRoute',
-  'ui.bootstrap',
-  'ngGeolocation'
+  'ui.bootstrap'
 ])
   .config(function ($routeProvider, $locationProvider) {
     $routeProvider

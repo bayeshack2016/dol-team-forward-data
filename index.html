@@ -18,7 +18,7 @@
     <!-- build:css({.tmp,client}) app/app.css -->
     <link rel="stylesheet" href="app/app.css">
     <!-- injector:css -->
-      <!-- endinjector -->
+    <!-- endinjector -->
     <!-- endbuild -->
     <link rel="stylesheet" href="bower_components/swiper/dist/css/swiper.min.css">
   </head>
@@ -55,7 +55,6 @@
       <script src="bower_components/angular-route/angular-route.js"></script>
       <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
       <script src="bower_components/lodash/dist/lodash.min.js"></script>
-      <script src="bower_components/ngGeolocation/ngGeolocation.min.js"></script>
       <!-- endbower -->
     <!-- endbuild -->
 
@@ -73,6 +72,7 @@
           <script src="app/hexbin.min.js"></script>
           <script src="app/main/main.controller.js"></script>
           <script src="app/main/main.js"></script>
+          <script src="app/uStates.js"></script>
           <script src="components/auth/auth.service.js"></script>
           <script src="components/auth/user.service.js"></script>
           <script src="components/modal/modal.service.js"></script>
@@ -82,6 +82,7 @@
           <!-- endinjector -->
         <!-- endbuild -->
 
+    <!--<script src="bower_components/ngGeolocation/ngGeolocation.min.js"></script>-->
     <script src="bower_components/swiper/dist/js/swiper.min.js"></script>
     <script>
       window.onload = function () {
@@ -92,7 +93,8 @@
           paginationClickable: true,
           spaceBetween: 30,
           mousewheelControl: true,
-          parallax: true
+          parallax: true,
+          speed: 2200
         })
       };
     </script>
