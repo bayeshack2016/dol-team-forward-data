@@ -227,6 +227,16 @@ angular.module('bayes2016App')
       }
     };
 
+
+    $scope.MoneyFormat = function(number) {
+      if (number!=undefined) {
+        var abs = number;
+        var absNum = abs.slice(1);
+        var numFinal = parseInt(absNum);
+      }
+      return '$' + numFinal + 'm';
+    };
+
     $scope.updateActiveGeography = function(geography) {
       $scope.stateName = geography.properties.name;
       $scope.state = geography.id;
@@ -238,7 +248,8 @@ angular.module('bayes2016App')
         $.each(json, function(i, v) {
           if (v.postal_cd == $scope.state) {
             $scope.communityColleges = v.num_com_college;
-            $scope.combinedCost = v.combined_costs_attrition;
+            $scope.combinedCost = $scope.MoneyFormat(v.combined_costs_attrition);
+            console.log($scope.combinedCost);
             $scope.$apply();
             return false; // stops the loop
           }
