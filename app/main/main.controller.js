@@ -6,7 +6,6 @@ angular.module('bayes2016App')
     $scope.selectedState = 'Wisconsin'; // for a little while...
 
     // SWIPER
-
     $scope.swiper = {};
 
     $scope.next = function() {
@@ -31,7 +30,7 @@ angular.module('bayes2016App')
     $scope.mapObject = {
       scope: 'usa',
       options: {
-        width: 1000,
+        width: 950,
       },
       geographyConfig: {
         popupTemplate: function(geography, data) { // This function should just return a string
@@ -56,47 +55,36 @@ angular.module('bayes2016App')
         "AR": {
           "fillKey": "1",
         },
-
         "WY": {
           "fillKey": "1",
         },
-
         "AL": {
           "fillKey": "1",
         },
-
         "NV": {
           "fillKey": "1",
         },
-
         "ND": {
           "fillKey": "1",
         },
-
         "CT": {
           "fillKey": "1",
         },
-
         "OK": {
           "fillKey": "1",
         },
-
         "NM": {
           "fillKey": "1",
         },
-
         "IL": {
           "fillKey": "1",
         },
-
         "PA": {
           "fillKey": "1",
         },
-
         "NC": {
           "fillKey": "1",
         },
-
         "OH": {
           "fillKey": "1",
         },
