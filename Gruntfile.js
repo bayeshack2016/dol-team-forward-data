@@ -22,7 +22,7 @@ module.exports = function(grunt) {
     },
     watch: {
       files: ['<%= jshint.files %>'],
-      tasks: ['jshint', 'express:dev'],
+      tasks: ['express:dev'],
       options: {
         livereload: true,
         spawn: false

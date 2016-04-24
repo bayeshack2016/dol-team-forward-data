@@ -250,6 +250,41 @@ angular.module('bayes2016App')
             $scope.communityColleges = v.num_com_college;
             $scope.combinedCost = $scope.MoneyFormat(v.combined_costs_attrition);
             console.log($scope.combinedCost);
+
+            $scope.data1 = [{
+              key: "Cumulative Return",
+              values: [{
+                "label": "2011 Total Medium Skilled Jobs",
+                "value": v.cc_spend_per_student
+              }, {
+                "label": "2012 Total Medium Skilled Jobs",
+                "value": parseFloat(v.combined_costs_attrition.slice(1, v.combined_costs_attrition.length))
+              }]
+            }];
+
+            $scope.data2 = [{
+              key: "Cumulative Return",
+              values: [{
+                "label": "2011 Total Medium Skilled Jobs",
+                "value": v.tot_med_2011
+              }, {
+                "label": "2012 Total Medium Skilled Jobs",
+                "value": v.tot_med_2012
+              }, {
+                "label": "2013 Total Medium Skilled Jobs",
+                "value": v.tot_med_2013
+              }, {
+                "label": "2014 Total Medium Skilled Jobs",
+                "value": v.tot_med_2014
+              }, {
+                "label": "Current Total Medium Skilled Jobs",
+                "value": v.tot_med_current
+              }, {
+                "label": "Projected Total Medium Skilled Jobs",
+                "value": v.tot_med_projected_2020
+              }]
+            }];
+
             $scope.$apply();
             return false; // stops the loop
           }
@@ -298,10 +333,10 @@ angular.module('bayes2016App')
       },
       title: {
         enable: true,
-        text: 'Title1'
+        text: 'Medium Skilled Jobs'
       },
       subtitle: {
-        enable: true,
+        enable: false,
         text: 'Subtitle2',
         css: {
           'text-align': 'center',
@@ -310,16 +345,6 @@ angular.module('bayes2016App')
       }
     };
 
-    $scope.data1 = [{
-      key: "Cumulative Return",
-      values: [{
-        "label": "2011 Total Medium Skilled Jobs",
-        "value": 2
-      }, {
-        "label": "2012 Total Medium Skilled Jobs",
-        "value": 4
-      }]
-    }];
 
     // Graph 2
     $scope.options2 = {
@@ -354,10 +379,10 @@ angular.module('bayes2016App')
       },
       title: {
         enable: true,
-        text: 'Title2'
+        text: ' Medium Skilled Jobs'
       },
       subtitle: {
-        enable: true,
+        enable: false,
         text: 'Subtitle2',
         css: {
           'text-align': 'center',
@@ -365,28 +390,5 @@ angular.module('bayes2016App')
         }
       }
     };
-
-    $scope.data2 = [{
-      key: "Cumulative Return",
-      values: [{
-        "label": "2011 Total Medium Skilled Jobs",
-        "value": 2
-      }, {
-        "label": "2012 Total Medium Skilled Jobs",
-        "value": 4
-      }, {
-        "label": "2013 Total Medium Skilled Jobs",
-        "value": 6
-      }, {
-        "label": "2014 Total Medium Skilled Jobs",
-        "value": 8
-      }, {
-        "label": "Current Total Medium Skilled Jobs",
-        "value": 10
-      }, {
-        "label": "Projected Total Medium Skilled Jobs",
-        "value": 12
-      }]
-    }];
 
   });
