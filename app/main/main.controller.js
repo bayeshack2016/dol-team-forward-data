@@ -63,12 +63,12 @@ angular.module('bayes2016App')
       bubbles: null,
       customLegend: function(layer, data, options) {
         var html = ['<ul class="list-inline">'],
-            label = 'asdfasdf';
+          label = 'asdfasdf';
         for (var fillKey in this.options.fills) {
           html.push('<li class="key" ',
-                      'style="border-top: 10px solid ' + this.options.fills[fillKey] + '">',
-                      fillKey,
-                      '</li>');
+            'style="border-top: 10px solid ' + this.options.fills[fillKey] + '">',
+            fillKey,
+            '</li>');
         }
         html.push('</ul>');
         d3.select(this.options.element).append('div')
@@ -79,7 +79,10 @@ angular.module('bayes2016App')
 
     $scope.updateActiveGeography = function(geography) {
       $scope.stateName = geography.properties.name;
-      $scope.state = geography.properties.id;
+      $scope.state = geography.id;
+      console.log(geography);
+
+      $scope.$apply();
       $scope.next();
     };
 
