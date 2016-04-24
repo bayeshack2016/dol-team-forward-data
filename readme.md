@@ -12,7 +12,7 @@ Definition of middle-skill jobs: O*Net Online, zone 3 occupation codes
 
 Estimation of magnitude and growth of supply of middle-skill workers: American Community Survey (ACS) by the U.S. Census Bureau quantifies population at each level of educational attainment
 
-Community college and daycare enrollment: Homeland Infrastructure Foundation-level Data
+Community college and daycare enrollment: Homeland Infrastructure Foundation-level Data.
 
 Community college spend: 5 Year Cumulative Expenditures of First Year Only Community College Students by State (American Institutes for Research)
 
