@@ -40,26 +40,32 @@
           </div>
         </ks-swiper-slide>
 
-        <!-- SLIDE 3 -->
+        <!-- SLIDE 2 -->
         <ks-swiper-slide class="swiper-slide">
             <div class="slide-frame">
                 <div class="row">
-                    <div class="title" data-swiper-parallax="-200">{{ stateName }}</div>
+                    <h2 class="title" data-swiper-parallax="-200"> The widening skill gap</h2>
                     <a style="position: absolute; top: 70px; right: 90px" class="btn btn-primary" ng-click="prev()" role="button">Up</a>
-                </div>
-                <div class="row" data-swiper-parallax="-600" style="border-color: dimgray; border-bottom: 2px solid; height: 30%;">
-                    <div class="col-sm-2" style="text-align: center; padding-top: 7%;">
-                        <nvd3 options="options1" data="data1" style="position: relative; top:-50px;"></nvd3>
-                    </div>
-                    <div class="col-sm-4" style="text-align: center; font-size: 78pt; padding-top: 5%;">
-                        {{communityColleges}}
-                    </div>
-                    <div class="col-sm-4" style="text-align: center; font-size: 78pt; padding-top: 5%;">
-                        {{combinedCost}}
-                    </div>
+                    <h3>In {{ stateName }}, the number of middle-skill jobs is growing faster than the number of employment-age individuals qualified for those jobs.</h3>
                 </div>
                 <div class="row" style="font-size: 38pt; text-align: center; padding-top: 10%; height: 50%;">
-                    <nvd3 options="options2" data="data2" style="position: relative; top:-50px;"></nvd3>
+                    <nvd3 options="options2" data="data2" style="position: relative; top:-100px;"></nvd3>
+                </div>
+                <div class="row" data-swiper-parallax="-600" style=" height: 30%; position: relative; top:-50px;">
+                    <h3>Workforce development is crucial towards preparing workers for the skills they need to compete in a modern economy.  Community colleges and K-12 vocational programs are two key publicly-financed actors in cultivating a trained workforce.</h3>
+                    <div class="col-sm-3" style="text-align: center; padding-top: 7%;">
+                        <nvd3 options="options1" data="data1" style="position: relative; top:-50px;"></nvd3>
+                    </div>
+                    <div class="col-sm-9" style="text-align: right;">
+                      <br>
+                      <br>
+                      <div class="row">
+                          <h5>{{communityColleges}} Community Colleges</h5>
+                      </div>
+                      <div class="row">
+                          <h5>{{combinedCost}} Total Funding for Community Colleges</h5>
+                      </div>
+                    </div>
                 </div>
             </div>
         </ks-swiper-slide>

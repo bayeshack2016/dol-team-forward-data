@@ -256,13 +256,13 @@ angular.module('bayes2016App')
             $scope.combinedCost = $scope.MoneyFormat(v.combined_costs_attrition);
 
             $scope.data1 = [{
-              key: "Cumulative Return",
+              key: "Community College Spent per Student",
               values: [{
-                "label": "2011 Total Medium Skilled Jobs",
+                "label": "State Spend per Student",
                 "value": v.cc_spend_per_student
               }, {
-                "label": "2012 Total Medium Skilled Jobs",
-                "value": v.combined_costs_attrition.length
+                "label": "National Median Spend per Student",
+                "value": 504.93
               }]
             }];
 
@@ -334,7 +334,7 @@ angular.module('bayes2016App')
       chart: {
         type: 'discreteBarChart',
         width: 1250,
-        height: 350,
+        height: 300,
         margin: {
           top: 20,
           right: 20,
