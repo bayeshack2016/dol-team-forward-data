@@ -233,7 +233,13 @@ angular.module('bayes2016App')
         var abs = number;
         var numFinal = parseInt(abs);
       }
-      return '$' + numFinal + 'm';
+
+     if ( numFinal < Math.pow( 10, 9 ) && numFinal >= Math.pow( 10, 6 ) ) {
+        numFinal = ( number / Math.pow( 10, 6 ) ).toFixed( 1 ) + "m";
+     } else if ( numFinal < Math.pow( 10, 6 ) && numFinal >= Math.pow( 10, 3 ) ) {
+       numFinal = ( number / Math.pow(10, 3) ).toFixed(1) + "k";
+    }
+      return '$' + numFinal;
     };
 
     $scope.updateActiveGeography = function(geography) {
