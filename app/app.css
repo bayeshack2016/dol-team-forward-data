@@ -8955,6 +8955,17 @@ button.close {
   background-size: cover;
   background-position: center;
 }
+.swiper-slide .slide-frame {
+  background-color: dimgray;
+  border-color: dimgray;
+  opacity: 0.7;
+  border: 2px solid;
+  padding: 40px;
+  height: 90vh;
+  border-radius: 15px;
+  filter: blur(35);
+  -webkit-filter: blur(35);
+}
 .swiper-slide .title {
   font-size: 41px;
   font-weight: 300;
@@ -8965,6 +8976,11 @@ button.close {
 .swiper-slide .text {
   font-size: 14px;
   max-width: 400px;
+  line-height: 1.3;
+}
+.swiper-slide .chart-row {
+  font-size: 14px;
+  width: 100%;
   line-height: 1.3;
 }
 .state {
@@ -9012,4 +9028,25 @@ button.close {
 }
 #tooltip tr td:nth-child(2) {
   text-align: center;
+}
+.y.axisRight text {
+  fill: orange;
+}
+.y.axisLeft text {
+  fill: steelblue;
+}
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+.bar1 {
+  fill: steelblue;
+}
+.bar2 {
+  fill: orange;
+}
+.x.axis path {
+  display: none;
 }
