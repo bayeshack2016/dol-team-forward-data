@@ -4,6 +4,7 @@ angular.module('bayes2016App')
   .controller('MainCtrl', function($scope) {
     // $scope.selectedState = null;
     $scope.selectedState = 'Wisconsin'; // for a little while...
+    $scope.communityColleges = null;
 
     // SWIPER
     $scope.swiper = {};
@@ -225,7 +226,20 @@ angular.module('bayes2016App')
     $scope.updateActiveGeography = function(geography) {
       $scope.stateName = geography.properties.name;
       $scope.state = geography.id;
-      console.log(geography);
+      // console.log(geography);
+
+      $.getJSON("app/sample_data.json", function(json) {
+        console.log(json); // this will show the info it in firebug console
+
+        $.each(json, function(i, v) {
+          if (v.postal_cd == $scope.state) {
+            $scope.communityColleges = v.num_com_college;
+            $scope.$apply();
+            return false; // stops the loop
+          }
+        });
+      });
+      // console.log(json);
 
       $scope.$apply();
       $scope.next();
