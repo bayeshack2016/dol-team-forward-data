@@ -34,30 +34,187 @@ angular.module('bayes2016App')
         width: 1000,
       },
       geographyConfig: {
-        popupOnHover: false,
-        highlighBorderColor: '#EAA9A8',
-        highlighBorderWidth: 2
+        popupTemplate: function(geography, data) { // This function should just return a string
+          return geography.properties.name;
+        },
+        popupOnHover: true, // True to show the popup while hovering
+        highlightOnHover: true,
+        highlightFillColor: '#000000',
+        highlightBorderColor: '#00FF00',
+        highlightBorderWidth: 1,
+        highlightBorderOpacity: 1
       },
       fills: {
-        'HIGH': '#CC4731',
-        'MEDIUM': '#306596',
-        'LOW': '#667FAF',
+        '5': '#9a1201',
+        '4': '#cc1c01',
+        '3': '#e16667',
+        '2': '#ec999a',
+        '1': '#f5cdcc',
         'defaultFill': '#DDDDDD'
       },
       data: {
-        "AZ": {
-          "fillKey": "MEDIUM",
+        "AR": {
+          "fillKey": "1",
         },
-        "CO": {
-          "fillKey": "HIGH",
+
+        "WY": {
+          "fillKey": "1",
         },
-        "DE": {
-          "fillKey": "LOW",
+
+        "AL": {
+          "fillKey": "1",
+        },
+
+        "NV": {
+          "fillKey": "1",
+        },
+
+        "ND": {
+          "fillKey": "1",
+        },
+
+        "CT": {
+          "fillKey": "1",
+        },
+
+        "OK": {
+          "fillKey": "1",
+        },
+
+        "NM": {
+          "fillKey": "1",
+        },
+
+        "IL": {
+          "fillKey": "1",
+        },
+
+        "PA": {
+          "fillKey": "1",
+        },
+
+        "NC": {
+          "fillKey": "1",
+        },
+
+        "OH": {
+          "fillKey": "1",
+        },
+        "OR": {
+          "fillKey": "2",
         },
         "GA": {
-          "fillKey": "MEDIUM",
-        }
-      },
+          "fillKey": "2",
+        },
+        "VT": {
+          "fillKey": "2",
+        },
+        "NY": {
+          "fillKey": "2",
+        },
+        "OH": {
+          "fillKey": "2",
+        },
+        "SD": {
+          "fillKey": "2",
+        },
+        "HI": {
+          "fillKey": "2",
+        },
+        "CA": {
+          "fillKey": "2",
+        },
+        "ND": {
+          "fillKey": "3",
+        },
+        "NH": {
+          "fillKey": "3",
+        },
+        "NC": {
+          "fillKey": "3",
+        },
+        "RI": {
+          "fillKey": "3",
+        },
+        "RI": {
+          "fillKey": "3",
+        },
+        "VA": {
+          "fillKey": "3",
+        },
+        "WI": {
+          "fillKey": "3",
+        },
+        "SC": {
+          "fillKey": "3",
+        },
+        "AK": {
+          "fillKey": "3",
+        },
+        "IN": {
+          "fillKey": "3",
+        },
+        "NV": {
+          "fillKey": "3",
+        },
+        "FL": {
+          "fillKey": "3",
+        },
+        "OK": {
+          "fillKey": "3",
+        },
+        "WA": {
+          "fillKey": "3",
+        },
+        "PA": {
+          "fillKey": "4",
+        },
+        "ID": {
+          "fillKey": "4",
+        },
+        "OR": {
+          "fillKey": "4",
+        },
+        "WV": {
+          "fillKey": "4",
+        },
+        "TN": {
+          "fillKey": "4",
+        },
+        "NM": {
+          "fillKey": "4",
+        },
+        "NJ": {
+          "fillKey": "4",
+        },
+        "TX": {
+          "fillKey": "4",
+        },
+        "NH": {
+          "fillKey": "4",
+        },
+        "CO": {
+          "fillKey": "4",
+        },
+        "NE": {
+          "fillKey": "5",
+        },
+        "AZ": {
+          "fillKey": "5",
+        },
+        "NJ": {
+          "fillKey": "5",
+        },
+        "UT": {
+          "fillKey": "5",
+        },
+        "DE": {
+          "fillKey": "5",
+        },
+        "NY": {
+          "fillKey": "5",
+        },
+      }
     };
     $scope.mapPlugins = {
       bubbles: null,
