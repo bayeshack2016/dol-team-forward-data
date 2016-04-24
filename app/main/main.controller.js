@@ -57,156 +57,156 @@ angular.module('bayes2016App')
         'defaultFill': '#DDDDDD'
       },
       data: {
-        "AR": {
-          "fillKey": "1",
-        },
-        "WY": {
-          "fillKey": "1",
-        },
         "AL": {
           "fillKey": "1",
         },
-        "NV": {
-          "fillKey": "1",
-        },
-        "ND": {
+        "AR": {
           "fillKey": "1",
         },
         "CT": {
           "fillKey": "1",
         },
-        "OK": {
+        "ID": {
+          "fillKey": "1",
+        },
+        "KS": {
+          "fillKey": "1",
+        },
+        "LA": {
+          "fillKey": "1",
+        },
+        "MS": {
+          "fillKey": "1",
+        },
+        "MT": {
+          "fillKey": "1",
+        },
+        "NJ": {
           "fillKey": "1",
         },
         "NM": {
           "fillKey": "1",
         },
-        "IL": {
+        "OK": {
           "fillKey": "1",
         },
-        "PA": {
+        "WY": {
           "fillKey": "1",
         },
-        "NC": {
-          "fillKey": "1",
-        },
-        "OH": {
-          "fillKey": "1",
-        },
-        "OR": {
+        "CA": {
           "fillKey": "2",
         },
         "GA": {
           "fillKey": "2",
         },
-        "VT": {
+        "HI": {
+          "fillKey": "2",
+        },
+        "NE": {
+          "fillKey": "2",
+        },
+        "NH": {
           "fillKey": "2",
         },
         "NY": {
-          "fillKey": "2",
-        },
-        "OH": {
           "fillKey": "2",
         },
         "SD": {
           "fillKey": "2",
         },
-        "HI": {
+        "VT": {
           "fillKey": "2",
-        },
-        "CA": {
-          "fillKey": "2",
-        },
-        "ND": {
-          "fillKey": "3",
-        },
-        "NH": {
-          "fillKey": "3",
-        },
-        "NC": {
-          "fillKey": "3",
-        },
-        "RI": {
-          "fillKey": "3",
-        },
-        "RI": {
-          "fillKey": "3",
-        },
-        "VA": {
-          "fillKey": "3",
-        },
-        "WI": {
-          "fillKey": "3",
-        },
-        "SC": {
-          "fillKey": "3",
         },
         "AK": {
-          "fillKey": "3",
-        },
-        "IN": {
-          "fillKey": "3",
-        },
-        "NV": {
           "fillKey": "3",
         },
         "FL": {
           "fillKey": "3",
         },
-        "OK": {
+        "IL": {
+          "fillKey": "3",
+        },
+        "IN": {
+          "fillKey": "3",
+        },
+        "KY": {
+          "fillKey": "3",
+        },
+        "ME": {
+          "fillKey": "3",
+        },
+        "NC": {
+          "fillKey": "3",
+        },
+        "NV": {
+          "fillKey": "3",
+        },
+        "PA": {
+          "fillKey": "3",
+        },
+        "RI": {
+          "fillKey": "3",
+        },
+        "SC": {
+          "fillKey": "3",
+        },
+        "VA": {
           "fillKey": "3",
         },
         "WA": {
           "fillKey": "3",
         },
-        "PA": {
+        "WI": {
+          "fillKey": "3",
+        },
+        "CO": {
           "fillKey": "4",
         },
-        "ID": {
+        "IA": {
+          "fillKey": "4",
+        },
+        "MD": {
+          "fillKey": "4",
+        },
+        "MI": {
+          "fillKey": "4",
+        },
+        "MO": {
+          "fillKey": "4",
+        },
+        "OH": {
           "fillKey": "4",
         },
         "OR": {
           "fillKey": "4",
         },
-        "WV": {
-          "fillKey": "4",
-        },
         "TN": {
-          "fillKey": "4",
-        },
-        "NM": {
-          "fillKey": "4",
-        },
-        "NJ": {
           "fillKey": "4",
         },
         "TX": {
           "fillKey": "4",
         },
-        "NH": {
+        "WV": {
           "fillKey": "4",
-        },
-        "CO": {
-          "fillKey": "4",
-        },
-        "NE": {
-          "fillKey": "5",
         },
         "AZ": {
-          "fillKey": "5",
-        },
-        "NJ": {
-          "fillKey": "5",
-        },
-        "UT": {
           "fillKey": "5",
         },
         "DE": {
           "fillKey": "5",
         },
-        "NY": {
+        "MA": {
           "fillKey": "5",
         },
+        "MN": {
+          "fillKey": "5",
+        },
+        "ND": {
+          "fillKey": "5",
+        },
+        "UT": {
+          "fillKey": "5",
+        }
       }
     };
     $scope.mapPlugins = {
@@ -229,7 +229,7 @@ angular.module('bayes2016App')
 
 
     $scope.MoneyFormat = function(number) {
-      if (number!=undefined) {
+      if (number != undefined) {
         var abs = number;
         var absNum = abs.slice(1);
         var numFinal = parseInt(absNum);
@@ -330,18 +330,6 @@ angular.module('bayes2016App')
           axisLabel: 'Y Axis',
           axisLabelDistance: 30
         }
-      },
-      title: {
-        enable: true,
-        text: 'Medium Skilled Jobs'
-      },
-      subtitle: {
-        enable: false,
-        text: 'Subtitle2',
-        css: {
-          'text-align': 'center',
-          'margin': '10px 13px 0px 7px'
-        }
       }
     };
 
@@ -375,18 +363,6 @@ angular.module('bayes2016App')
         yAxis: {
           axisLabel: 'Y Axis',
           axisLabelDistance: 30
-        }
-      },
-      title: {
-        enable: true,
-        text: ' Medium Skilled Jobs'
-      },
-      subtitle: {
-        enable: false,
-        text: 'Subtitle2',
-        css: {
-          'text-align': 'center',
-          'margin': '10px 13px 0px 7px'
         }
       }
     };
