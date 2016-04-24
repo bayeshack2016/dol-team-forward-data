@@ -7,7 +7,8 @@ angular.module('bayes2016App', [
   'ngRoute',
   'ui.bootstrap',
   'ksSwiper',
-  'datamaps'
+  'datamaps',
+  'nvd3'
 ])
   .config(function ($routeProvider, $locationProvider) {
     $routeProvider
