@@ -57,156 +57,156 @@ angular.module('bayes2016App')
         'defaultFill': '#DDDDDD'
       },
       data: {
-        "AR": {
-          "fillKey": "1",
-        },
-        "WY": {
-          "fillKey": "1",
-        },
         "AL": {
           "fillKey": "1",
         },
-        "NV": {
-          "fillKey": "1",
-        },
-        "ND": {
+        "AR": {
           "fillKey": "1",
         },
         "CT": {
           "fillKey": "1",
         },
-        "OK": {
+        "ID": {
+          "fillKey": "1",
+        },
+        "KS": {
+          "fillKey": "1",
+        },
+        "LA": {
+          "fillKey": "1",
+        },
+        "MS": {
+          "fillKey": "1",
+        },
+        "MT": {
+          "fillKey": "1",
+        },
+        "NJ": {
           "fillKey": "1",
         },
         "NM": {
           "fillKey": "1",
         },
-        "IL": {
+        "OK": {
           "fillKey": "1",
         },
-        "PA": {
+        "WY": {
           "fillKey": "1",
         },
-        "NC": {
-          "fillKey": "1",
-        },
-        "OH": {
-          "fillKey": "1",
-        },
-        "OR": {
+        "CA": {
           "fillKey": "2",
         },
         "GA": {
           "fillKey": "2",
         },
-        "VT": {
+        "HI": {
+          "fillKey": "2",
+        },
+        "NE": {
+          "fillKey": "2",
+        },
+        "NH": {
           "fillKey": "2",
         },
         "NY": {
-          "fillKey": "2",
-        },
-        "OH": {
           "fillKey": "2",
         },
         "SD": {
           "fillKey": "2",
         },
-        "HI": {
+        "VT": {
           "fillKey": "2",
-        },
-        "CA": {
-          "fillKey": "2",
-        },
-        "ND": {
-          "fillKey": "3",
-        },
-        "NH": {
-          "fillKey": "3",
-        },
-        "NC": {
-          "fillKey": "3",
-        },
-        "RI": {
-          "fillKey": "3",
-        },
-        "RI": {
-          "fillKey": "3",
-        },
-        "VA": {
-          "fillKey": "3",
-        },
-        "WI": {
-          "fillKey": "3",
-        },
-        "SC": {
-          "fillKey": "3",
         },
         "AK": {
-          "fillKey": "3",
-        },
-        "IN": {
-          "fillKey": "3",
-        },
-        "NV": {
           "fillKey": "3",
         },
         "FL": {
           "fillKey": "3",
         },
-        "OK": {
+        "IL": {
+          "fillKey": "3",
+        },
+        "IN": {
+          "fillKey": "3",
+        },
+        "KY": {
+          "fillKey": "3",
+        },
+        "ME": {
+          "fillKey": "3",
+        },
+        "NC": {
+          "fillKey": "3",
+        },
+        "NV": {
+          "fillKey": "3",
+        },
+        "PA": {
+          "fillKey": "3",
+        },
+        "RI": {
+          "fillKey": "3",
+        },
+        "SC": {
+          "fillKey": "3",
+        },
+        "VA": {
           "fillKey": "3",
         },
         "WA": {
           "fillKey": "3",
         },
-        "PA": {
+        "WI": {
+          "fillKey": "3",
+        },
+        "CO": {
           "fillKey": "4",
         },
-        "ID": {
+        "IA": {
+          "fillKey": "4",
+        },
+        "MD": {
+          "fillKey": "4",
+        },
+        "MI": {
+          "fillKey": "4",
+        },
+        "MO": {
+          "fillKey": "4",
+        },
+        "OH": {
           "fillKey": "4",
         },
         "OR": {
           "fillKey": "4",
         },
-        "WV": {
-          "fillKey": "4",
-        },
         "TN": {
-          "fillKey": "4",
-        },
-        "NM": {
-          "fillKey": "4",
-        },
-        "NJ": {
           "fillKey": "4",
         },
         "TX": {
           "fillKey": "4",
         },
-        "NH": {
+        "WV": {
           "fillKey": "4",
-        },
-        "CO": {
-          "fillKey": "4",
-        },
-        "NE": {
-          "fillKey": "5",
         },
         "AZ": {
-          "fillKey": "5",
-        },
-        "NJ": {
-          "fillKey": "5",
-        },
-        "UT": {
           "fillKey": "5",
         },
         "DE": {
           "fillKey": "5",
         },
-        "NY": {
+        "MA": {
           "fillKey": "5",
         },
+        "MN": {
+          "fillKey": "5",
+        },
+        "ND": {
+          "fillKey": "5",
+        },
+        "UT": {
+          "fillKey": "5",
+        }
       }
     };
     $scope.mapPlugins = {
@@ -227,6 +227,21 @@ angular.module('bayes2016App')
       }
     };
 
+
+    $scope.MoneyFormat = function(number) {
+      if (number != undefined) {
+        var abs = number;
+        var numFinal = parseInt(abs);
+      }
+
+     if ( numFinal < Math.pow( 10, 9 ) && numFinal >= Math.pow( 10, 6 ) ) {
+        numFinal = ( number / Math.pow( 10, 6 ) ).toFixed( 1 ) + "m";
+     } else if ( numFinal < Math.pow( 10, 6 ) && numFinal >= Math.pow( 10, 3 ) ) {
+       numFinal = ( number / Math.pow(10, 3) ).toFixed(1) + "k";
+    }
+      return '$' + numFinal;
+    };
+
     $scope.updateActiveGeography = function(geography) {
       $scope.stateName = geography.properties.name;
       $scope.state = geography.id;
@@ -238,7 +253,42 @@ angular.module('bayes2016App')
         $.each(json, function(i, v) {
           if (v.postal_cd == $scope.state) {
             $scope.communityColleges = v.num_com_college;
-            $scope.combinedCost = v.combined_costs_attrition;
+            $scope.combinedCost = $scope.MoneyFormat(v.combined_costs_attrition);
+
+            $scope.data1 = [{
+              key: "Cumulative Return",
+              values: [{
+                "label": "2011 Total Medium Skilled Jobs",
+                "value": v.cc_spend_per_student
+              }, {
+                "label": "2012 Total Medium Skilled Jobs",
+                "value": v.combined_costs_attrition.length
+              }]
+            }];
+
+            $scope.data2 = [{
+              key: "Cumulative Return",
+              values: [{
+                "label": "2011 Total Medium Skilled Jobs",
+                "value": v.tot_med_2011
+              }, {
+                "label": "2012 Total Medium Skilled Jobs",
+                "value": v.tot_med_2012
+              }, {
+                "label": "2013 Total Medium Skilled Jobs",
+                "value": v.tot_med_2013
+              }, {
+                "label": "2014 Total Medium Skilled Jobs",
+                "value": v.tot_med_2014
+              }, {
+                "label": "Current Total Medium Skilled Jobs",
+                "value": v.tot_med_current
+              }, {
+                "label": "Projected Total Medium Skilled Jobs",
+                "value": v.tot_med_projected_2020
+              }]
+            }];
+
             $scope.$apply();
             return false; // stops the loop
           }
@@ -258,11 +308,11 @@ angular.module('bayes2016App')
     $scope.options1 = {
       chart: {
         type: 'discreteBarChart',
-        width: 200,
-        height: 150,
+        width: 450,
+        height: 200,
         margin: {
-          top: 20,
-          right: 20,
+          top: 10,
+          right: 0,
           bottom: 60,
           left: 55
         },
@@ -272,55 +322,24 @@ angular.module('bayes2016App')
         y: function(d) {
           return d.value;
         },
-        showValues: true,
+        showValues: false,
         valueFormat: function(d) {
           return d3.format(',.4f')(d);
-        },
-        transitionDuration: 500,
-        xAxis: {
-          axisLabel: 'X Axis'
-        },
-        yAxis: {
-          axisLabel: 'Y Axis',
-          axisLabelDistance: 30
-        }
-      },
-      title: {
-        enable: true,
-        text: 'Title1'
-      },
-      subtitle: {
-        enable: true,
-        text: 'Subtitle2',
-        css: {
-          'text-align': 'center',
-          'margin': '10px 13px 0px 7px'
         }
       }
     };
-
-    $scope.data1 = [{
-      key: "Cumulative Return",
-      values: [{
-        "label": "2011 Total Medium Skilled Jobs",
-        "value": 2
-      }, {
-        "label": "2012 Total Medium Skilled Jobs",
-        "value": 4
-      }]
-    }];
 
     // Graph 2
     $scope.options2 = {
       chart: {
         type: 'discreteBarChart',
-        width: 600,
-        height: 200,
+        width: 1250,
+        height: 350,
         margin: {
           top: 20,
           right: 20,
           bottom: 60,
-          left: 55
+          left: 80
         },
         x: function(d) {
           return d.label;
@@ -328,54 +347,12 @@ angular.module('bayes2016App')
         y: function(d) {
           return d.value;
         },
-        showValues: true,
+        showValues: false,
         valueFormat: function(d) {
           return d3.format(',.4f')(d);
         },
-        transitionDuration: 500,
-        xAxis: {
-          axisLabel: 'X Axis'
-        },
-        yAxis: {
-          axisLabel: 'Y Axis',
-          axisLabelDistance: 30
-        }
-      },
-      title: {
-        enable: true,
-        text: 'Title2'
-      },
-      subtitle: {
-        enable: true,
-        text: 'Subtitle2',
-        css: {
-          'text-align': 'center',
-          'margin': '10px 13px 0px 7px'
-        }
+        transitionDuration: 500
       }
     };
-
-    $scope.data2 = [{
-      key: "Cumulative Return",
-      values: [{
-        "label": "2011 Total Medium Skilled Jobs",
-        "value": 2
-      }, {
-        "label": "2012 Total Medium Skilled Jobs",
-        "value": 4
-      }, {
-        "label": "2013 Total Medium Skilled Jobs",
-        "value": 6
-      }, {
-        "label": "2014 Total Medium Skilled Jobs",
-        "value": 8
-      }, {
-        "label": "Current Total Medium Skilled Jobs",
-        "value": 10
-      }, {
-        "label": "Projected Total Medium Skilled Jobs",
-        "value": 12
-      }]
-    }];
 
   });

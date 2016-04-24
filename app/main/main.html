@@ -22,17 +22,19 @@
         <ks-swiper-slide class="swiper-slide">
           <div class="slide-frame">
             <div class="row">
-              <div class="col-sm-8">
-                <h3>Please select your state:</h3>
-                <datamap map="mapObject" on-click="updateActiveGeography"></datamap>
-              </div>
-              <div class="col-sm-4">
-                <div class="title" data-swiper-parallax="-100">Introduction</div>
-                <div class="text" data-swiper-parallax="-600">
-                  <p>Workforce development is crucial towards preparing workers for the skills they need to compete in a modern economy.  By 2017, an estimated 40% of all new job growth in the United States will be driven by so-called “middle-skill” jobs (i.e…….).   In order for workers to have the requisite skill set needed to effectively compete in the modern economy, they will need to learn new skills and adapt to rapidly changing tides within the labor market.
-                    <br><br>
-                    Our analysis dimensions the gap between middle-skill labor supply and middle-skill jobs demanded by state.  Through predictive modeling, we then projected the impact of the gap on states in future years.  To address the current and future gaps, we then sought to identify key policy levers that can be used to address this gap (i.e. increase $/student, # of community colleges, # day cares, etc…)</p>
+                <div class="col-sm-4">
+                    <div class="title" data-swiper-parallax="-100">Introduction</div>
+                    <div class="text" data-swiper-parallax="-600">
+                        <p>Today, over half of the America’s jobs fall under the classification “middle-skill” - work requiring experience or credentials beyond a high-school education, but not a four-year degree.  While the prevalence of these jobs offers considerable economic opportunity, there remains a stark gap between the growing availability of these positions and the number of Americans qualified to fill them.  Moreover, with middle-skill jobs projected to account for 40% of all new job growth in the United States by 2017, this “skills gap” is poised to increase even further, barring corrective action from policymakers and labor stakeholders.
+                            <br><br>
+                            Our analysis explores the widening American skills gap through the lens of a key cohort of economic actors: states. Using data aggregated from a range of federal agencies/institutions (Census Bureau, Bureau of Labor Statistics, National Center for Education Statistics), we have identified a set of state behaviors that are indicative of how well each state’s labor force has kept pace with the market demand for middle-skilled labor.  The nature of these attributes - including high spending per student for community college education, job training programs, and secondary-level vocational training - point to increased investment in workforce development and more comprehensive utilization of federal funding sources as potential policy levers that can be used to create and maintain a future-ready workforce.</p>
+                    </div>
                 </div>
+              <div class="col-sm-8">
+                <datamap map="mapObject" on-click="updateActiveGeography" style="margin-top: 15%;"></datamap>
+                  <div style="width: 100%; text-align: center;">
+                      <h2>Select a state to continue...</h2>
+                  </div>
               </div>
             </div>
           </div>
@@ -40,25 +42,26 @@
 
         <!-- SLIDE 3 -->
         <ks-swiper-slide class="swiper-slide">
-            <div class="row">
-                <div class="title" data-swiper-parallax="-200">{{ stateName }}</div>
-            </div>
-            <div class="row" data-swiper-parallax="-600" style="border-color: dimgray; border-bottom: 2px solid; height: 30%;">
-                <div class="col-sm-4" style="text-align: center; padding-top: 7%;">
-                    <nvd3 options="options1" data="data1"></nvd3>
+            <div class="slide-frame">
+                <div class="row">
+                    <div class="title" data-swiper-parallax="-200">{{ stateName }}</div>
+                    <a style="position: absolute; top: 70px; right: 90px" class="btn btn-primary" ng-click="prev()" role="button">Up</a>
                 </div>
-                <div class="col-sm-4" style="text-align: center; font-size: 78pt; padding-top: 5%;">
-                    {{communityColleges}}
+                <div class="row" data-swiper-parallax="-600" style="border-color: dimgray; border-bottom: 2px solid; height: 30%;">
+                    <div class="col-sm-2" style="text-align: center; padding-top: 7%;">
+                        <nvd3 options="options1" data="data1" style="position: relative; top:-50px;"></nvd3>
+                    </div>
+                    <div class="col-sm-4" style="text-align: center; font-size: 78pt; padding-top: 5%;">
+                        {{communityColleges}}
+                    </div>
+                    <div class="col-sm-4" style="text-align: center; font-size: 78pt; padding-top: 5%;">
+                        {{combinedCost}}
+                    </div>
                 </div>
-                <div class="col-sm-4" style="text-align: center; font-size: 78pt; padding-top: 5%;">
-                    {{combinedCost}}
+                <div class="row" style="font-size: 38pt; text-align: center; padding-top: 10%; height: 50%;">
+                    <nvd3 options="options2" data="data2" style="position: relative; top:-50px;"></nvd3>
                 </div>
             </div>
-            <div class="row" style="font-size: 38pt; text-align: center; padding-top: 10%; height: 50%;">
-                <nvd3 options="options2" data="data2"></nvd3>
-            </div>
-
-          <a class="btn btn-primary" ng-click="prev()" role="button">Previous</a>
         </ks-swiper-slide>
 
       </ks-swiper-container>
