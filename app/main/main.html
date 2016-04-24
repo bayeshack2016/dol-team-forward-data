@@ -18,32 +18,21 @@
 
         <div class="parallax-bg" style="background-image:url('../assets/images/BlogBackground6.jpg'); opacity: 0.6;" data-swiper-parallax="-23%"></div>
 
-        <!-- SLIDE 1 -->
-        <ks-swiper-slide class="swiper-slide">
-          <div class="slide-frame">
-            <div class="title" data-swiper-parallax="-100">Introduction</div>
-            <div class="text" data-swiper-parallax="-600">
-              <p>Workforce development is crucial towards preparing workers for the skills they need to compete in a modern economy.  By 2017, an estimated 40% of all new job growth in the United States will be driven by so-called “middle-skill” jobs (i.e…….).   In order for workers to have the requisite skill set needed to effectively compete in the modern economy, they will need to learn new skills and adapt to rapidly changing tides within the labor market.
-                <br><br>
-                Our analysis dimensions the gap between middle-skill labor supply and middle-skill jobs demanded by state.  Through predictive modeling, we then projected the impact of the gap on states in future years.  To address the current and future gaps, we then sought to identify key policy levers that can be used to address this gap (i.e. increase $/student, # of community colleges, # day cares, etc…)</p>
-            </div>
-            <a class="btn btn-primary" ng-click="next()" role="button">Next</a>
-            <div style="width: 100%; height: 100%; text-align: center;">
-
-            </div>
-          </div>
-        </ks-swiper-slide>
-
         <!-- SLIDE 2 -->
         <ks-swiper-slide class="swiper-slide">
           <div class="slide-frame">
             <div class="row">
               <div class="col-sm-8">
-                <h3>Please select your state!</h3>
+                <h3>Please select your state:</h3>
                 <datamap map="mapObject" on-click="updateActiveGeography"></datamap>
               </div>
               <div class="col-sm-4">
-                <a class="btn btn-primary" ng-click="prev()" role="button">Previous</a>
+                <div class="title" data-swiper-parallax="-100">Introduction</div>
+                <div class="text" data-swiper-parallax="-600">
+                  <p>Workforce development is crucial towards preparing workers for the skills they need to compete in a modern economy.  By 2017, an estimated 40% of all new job growth in the United States will be driven by so-called “middle-skill” jobs (i.e…….).   In order for workers to have the requisite skill set needed to effectively compete in the modern economy, they will need to learn new skills and adapt to rapidly changing tides within the labor market.
+                    <br><br>
+                    Our analysis dimensions the gap between middle-skill labor supply and middle-skill jobs demanded by state.  Through predictive modeling, we then projected the impact of the gap on states in future years.  To address the current and future gaps, we then sought to identify key policy levers that can be used to address this gap (i.e. increase $/student, # of community colleges, # day cares, etc…)</p>
+                </div>
               </div>
             </div>
           </div>
