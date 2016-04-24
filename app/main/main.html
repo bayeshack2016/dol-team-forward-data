@@ -22,17 +22,19 @@
         <ks-swiper-slide class="swiper-slide">
           <div class="slide-frame">
             <div class="row">
-              <div class="col-sm-8">
-                <h3>Please select your state:</h3>
-                <datamap map="mapObject" on-click="updateActiveGeography"></datamap>
-              </div>
-              <div class="col-sm-4">
-                <div class="title" data-swiper-parallax="-100">Introduction</div>
-                <div class="text" data-swiper-parallax="-600">
-                  <p>Today, over half of the America’s jobs fall under the classification “middle-skill” - work requiring experience or credentials beyond a high-school education, but not a four-year degree.  While the prevalence of these jobs offers considerable economic opportunity, there remains a stark gap between the growing availability of these positions and the number of Americans qualified to fill them.  Moreover, with middle-skill jobs projected to account for 40% of all new job growth in the United States by 2017, this “skills gap” is poised to increase even further, barring corrective action from policymakers and labor stakeholders.
-                      <br><br>
-                      Our analysis explores the widening American skills gap through the lens of a  cohort of economic actors: states. Using data aggregated from a range of federal agencies/institutions (Census Bureau, Bureau of Labor Statistics, National Center for Education Statistics), we have identified a set of state behaviors that are indicative of how well each state’s labor force has kept pace with the market demand for middle-skilled labor.  The nature of these attributes - including high spending per student for community college education, job training programs, and secondary-level vocational training - point to increased investment in workforce development and more comprehensive utilization of federal funding sources as potential policy levers that can be used to create and maintain a future-ready workforce.</p>
+                <div class="col-sm-4">
+                    <div class="title" data-swiper-parallax="-100">Introduction</div>
+                    <div class="text" data-swiper-parallax="-600">
+                        <p>Today, over half of the America’s jobs fall under the classification “middle-skill” - work requiring experience or credentials beyond a high-school education, but not a four-year degree.  While the prevalence of these jobs offers considerable economic opportunity, there remains a stark gap between the growing availability of these positions and the number of Americans qualified to fill them.  Moreover, with middle-skill jobs projected to account for 40% of all new job growth in the United States by 2017, this “skills gap” is poised to increase even further, barring corrective action from policymakers and labor stakeholders.
+                            <br><br>
+                            Our analysis explores the widening American skills gap through the lens of a key cohort of economic actors: states. Using data aggregated from a range of federal agencies/institutions (Census Bureau, Bureau of Labor Statistics, National Center for Education Statistics), we have identified a set of state behaviors that are indicative of how well each state’s labor force has kept pace with the market demand for middle-skilled labor.  The nature of these attributes - including high spending per student for community college education, job training programs, and secondary-level vocational training - point to increased investment in workforce development and more comprehensive utilization of federal funding sources as potential policy levers that can be used to create and maintain a future-ready workforce.</p>
+                    </div>
                 </div>
+              <div class="col-sm-8">
+                <datamap map="mapObject" on-click="updateActiveGeography" style="margin-top: 15%;"></datamap>
+                  <div style="width: 100%; text-align: center;">
+                      <h2>Select a state to continue...</h2>
+                  </div>
               </div>
             </div>
           </div>
